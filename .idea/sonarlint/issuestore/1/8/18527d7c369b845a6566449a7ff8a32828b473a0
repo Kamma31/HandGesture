@@ -1,0 +1,14 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ï·Ü®
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¶ãßÖ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ï·Ü®
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÂÙ¬ó
+h
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ãµÊ¶
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ï·Ü®
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ï·Ü®
+S	java:S106"9Replace this use of System.out or System.err by a logger.(•äôÇÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(âŞ“‚
+k	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ïşÿÿÿÿ
+a
+java:S1192"KDefine a constant instead of duplicating this literal "There are " 4 times.(ÂÙ¬ó
