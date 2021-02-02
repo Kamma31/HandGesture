@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.rant'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://clojars.org/repo/"
+    }
+}
+
+dependencies {
+    implementation "org.openpnp:opencv:3.4.2-1"
+    compile group: 'org.clojars.nakkaya', name: 'darcula', version: '1.0.0'
+}

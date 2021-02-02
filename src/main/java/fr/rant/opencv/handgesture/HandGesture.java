@@ -1,7 +1,7 @@
-package fr.rant.opencv;
+package fr.rant.opencv.handgesture;
 
 import com.bulenkov.iconloader.util.Pair;
-import fr.rant.opencv.core.Partition;
+import fr.rant.opencv.handgesture.core.Partition;
 import org.opencv.core.Point;
 import org.opencv.core.*;
 import org.opencv.highgui.HighGui;
@@ -21,6 +21,7 @@ import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static org.opencv.core.Core.FONT_ITALIC;
 import static org.opencv.imgproc.Imgproc.*;
 
 public class HandGesture {
@@ -31,7 +32,6 @@ public class HandGesture {
     private static JFrame frame;
     private static JLabel imgLabel;
     private static JCheckBox binaryCb;
-    private static JCheckBox lightCb;
     private static JCheckBox contourCb;
     private static JCheckBox rougthHullCb;
     private static JCheckBox verticesCB;
@@ -57,15 +57,12 @@ public class HandGesture {
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
         binaryCb = new JCheckBox("See binary mask");
         binaryCb.setSelected(true);
-        lightCb = new JCheckBox("Inverser le seuillage");
-        lightCb.setSelected(true);
         contourCb = new JCheckBox("Afficher le contour");
         rougthHullCb = new JCheckBox("Afficher le contour grossier");
-        verticesCB = new JCheckBox("Afficher tous les sommets trouvées");
+        verticesCB = new JCheckBox("Afficher tous les sommets trouvees");
         validVerticesCb = new JCheckBox("Afficher les sommets valides");
 
         panel.add(binaryCb);
-        panel.add(lightCb);
         panel.add(contourCb);
         panel.add(rougthHullCb);
         panel.add(verticesCB);
@@ -192,12 +189,12 @@ public class HandGesture {
             Imgproc.blur(res, res, new Size(10, 10));
             // On assure le bon découpage de la main
             // Espace lumineux ? On prend alors le négatif de l'image
-            if (lightCb.isSelected()) {
-                Imgproc.threshold(res, res, 200, 255, THRESH_BINARY_INV);
-                Core.bitwise_not(res, res);
-            } else {
-                Imgproc.threshold(res, res, 200, 255, THRESH_BINARY);
-            }
+
+//          Imgproc.threshold(res, res, 200, 255, THRESH_BINARY_INV);
+//          Core.bitwise_not(res, res);
+
+            Imgproc.threshold(res, res, 200, 255, THRESH_BINARY);
+
 
             return res;
         }

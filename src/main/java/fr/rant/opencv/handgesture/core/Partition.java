@@ -1,4 +1,4 @@
-package fr.rant.opencv.core;
+package fr.rant.opencv.handgesture.core;
 
 import java.util.ArrayList;
 import java.util.Arrays;
